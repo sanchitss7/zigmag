@@ -1,0 +1,709 @@
+/********** Template CSS **********/
+:root {
+    --primary: #FE5D37;
+    --light: #FFF5F3;
+    --dark: #103741;
+}
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 45px;
+    bottom: 45px;
+    z-index: 99;
+}
+
+
+/*** Spinner ***/
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/*** Button ***/
+.btn {
+    font-weight: 500;
+    transition: .5s;
+}
+
+.btn.btn-primary {
+    color: #FFFFFF;
+}
+
+.btn-square {
+    width: 38px;
+    height: 38px;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+    border-radius: 50px;
+}
+
+*,
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Outfit', cursive;
+
+}
+
+
+/*** Heading ***/
+h1,
+h2,
+h3,
+h4,
+.h1,
+.h2,
+.h3,
+.h4,
+.display-1,
+.display-2,
+.display-3,
+.display-4,
+.display-5,
+.display-6 {
+    font-family: "Arvo", serif;
+    font-weight: 500;
+}
+
+h5,
+h6,
+.h5,
+.h6 {
+    font-weight: 600;
+}
+
+/* Ensuring main container stays above floating background */
+.container-fluid {
+    position: relative;
+    z-index: 1;
+}
+
+.font-secondary {
+    font-family: 'Outfit', cursive;
+}
+
+
+/*** Navbar ***/
+.navbar .navbar-nav .nav-link {
+    padding: 30px 15px;
+    color: var(--dark);
+    font-weight: 500;
+    outline: none;
+}
+
+a.navbar-brand img {
+    width: 70px;
+}
+
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link.active {
+    color: var(--primary);
+}
+
+.navbar.sticky-top {
+    top: -100px;
+    transition: .5s;
+}
+
+.navbar .dropdown-toggle::after {
+    border: none;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    vertical-align: middle;
+    margin-left: 5px;
+    transition: .5s;
+}
+
+.navbar .dropdown-toggle[aria-expanded=true]::after {
+    transform: rotate(-180deg);
+}
+
+@media (max-width: 991.98px) {
+    .navbar .navbar-nav .nav-link {
+        margin-right: 0;
+        padding: 10px 0;
+    }
+
+    .navbar .navbar-nav {
+        margin-top: 15px;
+        border-top: 1px solid #EEEEEE;
+    }
+}
+
+@media (min-width: 992px) {
+
+    .ZEP-Brochure{display: none;}
+
+    .navbar .nav-item .dropdown-menu {
+        display: block;
+        top: calc(100% - 15px);
+        margin-top: 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: .5s;
+
+    }
+
+    .navbar .nav-item:hover .dropdown-menu {
+        top: 100%;
+        visibility: visible;
+        transition: .5s;
+        opacity: 1;
+    }
+}
+
+
+/*** Header ***/
+.header-carousel::before,
+.header-carousel::after,
+.page-header::before,
+.page-header::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 10px;
+    top: 0;
+    left: 0;
+    background: url(../img/bg-header-top.png) center center repeat-x;
+    z-index: 1;
+}
+
+.header-carousel::after,
+.page-header::after {
+    height: 19px;
+    top: auto;
+    bottom: 0;
+    background: url(../img/bg-header-bottom.png) center center repeat-x;
+}
+
+@media (max-width: 768px) {
+    .header-carousel .owl-carousel-item {
+        position: relative;
+        min-height: 500px;
+    }
+
+    .header-carousel .owl-carousel-item img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .header-carousel .owl-carousel-item p {
+        font-size: 16px !important;
+        font-weight: 400 !important;
+    }
+
+    .header-carousel .owl-carousel-item h1 {
+        font-size: 30px;
+        font-weight: 600;
+    }
+}
+
+.header-carousel .owl-nav {
+    position: absolute;
+    top: 50%;
+    right: 8%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+}
+
+.header-carousel .owl-nav .owl-prev,
+.header-carousel .owl-nav .owl-next {
+    margin: 7px 0;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    background: transparent;
+    border: 1px solid #FFFFFF;
+    border-radius: 45px;
+    font-size: 22px;
+    transition: .5s;
+}
+
+.header-carousel .owl-nav .owl-prev:hover,
+.header-carousel .owl-nav .owl-next:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.page-header {
+    background: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), url(../img/carousel-1.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+    color: rgba(255, 255, 255, .5);
+}
+
+
+/*** About ***/
+.about-img img {
+    transition: .5s;
+}
+
+.about-img img:hover {
+    background: var(--primary) !important;
+}
+
+/*** Classes ***/
+.classes-item {
+    transition: .5s;
+}
+
+.classes-item:hover {
+    margin-top: -10px;
+}
+
+
+/* Container adjustments */
+.marquee-wrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 20px 0;
+}
+
+.marquee-track {
+    display: flex;
+    width: max-content;
+    animation: scrollMarquee 20s linear infinite;
+}
+
+/* Individual Card Styling */
+.marquee-item {
+    width: 220px;
+    height: 100px;
+    margin: 0 15px;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(0, 0, 0, 0.03);
+    background: #f8f9fa;
+    /* Base light grey */
+    cursor: pointer;
+}
+
+.marquee-item h4 i {
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 0px;
+}
+
+/* Hover Effect - The "Pop" */
+.marquee-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+    border-color: #d4d4d4;
+}
+
+/* Making Icons Colorful */
+.marquee-item:nth-child(1) i,
+.marquee-item:nth-child(6) i {
+    color: #ff6b6b;
+}
+
+/* Red */
+.marquee-item:nth-child(2) i,
+.marquee-item:nth-child(7) i {
+    color: #4ecdc4;
+}
+
+/* Teal */
+.marquee-item:nth-child(3) i,
+.marquee-item:nth-child(8) i {
+    color: #ffe66d;
+}
+
+/* Yellow */
+.marquee-item:nth-child(4) i,
+.marquee-item:nth-child(9) i {
+    color: #1a53ff;
+}
+
+/* Blue */
+.marquee-item:nth-child(5) i,
+.marquee-item:nth-child(10) i {
+    color: #ff9f1c;
+}
+
+/* Orange */
+
+@keyframes scrollMarquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.marquee-wrapper:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+/* Container for the floating icons */
+.floating-element {
+    position: absolute;
+    z-index: 0;
+    opacity: 0.3;
+    pointer-events: none;
+    /* Prevents icons from blocking clicks */
+    animation: floatAnimation 6s infinite ease-in-out alternate;
+}
+
+/* The Bobbing and Rotating Animation */
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    100% {
+        transform: translateY(-40px) rotate(15deg);
+    }
+}
+
+/* Position adjustments */
+.toy-left {
+    top: 16%;
+    left: 5%;
+    font-size: 6rem;
+    color: #ff6b6b;
+    animation-delay: 0s;
+}
+
+.toy-right {
+    bottom: 5%;
+    right: 3%;
+    font-size: 8rem;
+    color: #4ecdc4;
+    animation-delay: 1s;
+    /* Staggered animation */
+    z-index: 2;
+}
+
+
+
+/*** Team ***/
+.team-item .team-text {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    bottom: 0;
+    margin: 0 auto;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #FFFFFF;
+    border: 17px solid var(--light);
+    border-radius: 250px;
+    transition: .5s;
+}
+
+.team-item:hover .team-text {
+    border-color: var(--primary);
+}
+
+
+/*** Footer ***/
+.footer {
+    background-color: #124d5c !important;
+}
+
+.footer .btn.btn-social {
+    margin-right: 5px;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 45px;
+    transition: .3s;
+}
+
+.footer .btn.btn-social:hover {
+    border-color: var(--primary);
+    background: var(--primary);
+}
+
+.footer .btn.btn-link {
+    display: block;
+    margin-bottom: 5px;
+    padding: 0;
+    text-align: left;
+    font-size: 16px;
+    font-weight: normal;
+    text-transform: capitalize;
+    transition: .3s;
+}
+
+.footer .btn.btn-link::before {
+    position: relative;
+    content: "\f105";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 10px;
+}
+
+.footer .btn.btn-link:hover {
+    color: var(--primary) !important;
+    letter-spacing: 1px;
+    box-shadow: none;
+}
+
+.footer .form-control {
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.footer .copyright {
+    padding: 25px 0;
+    font-size: 15px;
+    border-top: 1px solid rgba(256, 256, 256, .1);
+}
+
+.footer .copyright a {
+    color: #FFFFFF;
+}
+
+.footer .footer-menu a {
+    margin-right: 15px;
+    padding-right: 15px;
+    border-right: 1px solid rgba(255, 255, 255, .1);
+}
+
+.footer .copyright a:hover,
+.footer .footer-menu a:hover {
+    color: var(--primary) !important;
+}
+
+.footer .footer-menu a:last-child {
+    margin-right: 0;
+    padding-right: 0;
+    border-right: none;
+}
+
+/* Parallax Background Class */
+.parallax-bg {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Floating Toys Animation */
+.floating-toy {
+    position: absolute;
+    z-index: 3;
+    opacity: 0.4;
+    color: #fff;
+    pointer-events: none;
+    animation: floatToy infinite ease-in-out alternate;
+}
+
+
+
+.owl-carousel.header-carousel .owl-item {
+    background: #333;
+}
+
+.owl-carousel.header-carousel .owl-item img {
+    opacity: 0.7;
+}
+
+/* Styling for the Toggler Button */
+.navbar-toggler {
+    border: none !important;
+    outline: none !important;
+    padding: 0;
+    width: 30px;
+    height: 25px;
+    position: relative;
+    cursor: pointer;
+}
+
+.navbar-toggler:focus {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none;
+}
+
+/* Base style for lines */
+.navbar-toggler .navbar-toggler-icon {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #000;
+    /* Change to your preferred color */
+    position: absolute;
+    top: 50%;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Create the top and bottom lines using pseudo-elements */
+.navbar-toggler .navbar-toggler-icon::before,
+.navbar-toggler .navbar-toggler-icon::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    background: #000;
+    left: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar-toggler .navbar-toggler-icon::before {
+    top: -8px;
+}
+
+.navbar-toggler .navbar-toggler-icon::after {
+    bottom: -8px;
+}
+
+/* ANIMATION: When button is clicked (collapsed state) */
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+    background: transparent;
+    /* Hide the middle line */
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+    transform: rotate(-45deg);
+    bottom: 0;
+}
+
+@keyframes floatToy {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    100% {
+        transform: translateY(-40px) rotate(25deg);
+    }
+}
+
+/* Toy Placements and Timings */
+.toy-1 {
+    top: 20%;
+    left: 5%;
+    font-size: 6rem;
+    animation-duration: 3s;
+}
+
+.toy-2 {
+    top: -1%;
+    right: 8%;
+    font-size: 8rem;
+    animation-duration: 2s;
+}
+
+.toy-3 {
+    bottom: 10%;
+    left: 200px;
+    font-size: 6.5rem;
+    animation-duration: 4s;
+}
+
+.toy-4 {
+    bottom: 25%;
+    right: 10%;
+    font-size: 6.5rem;
+    animation-duration: 5s;
+}
+
+.position-absolute.top-0.start-0.bg-primary.text-white.rounded-circle.d-flex.align-items-center.justify-content-center.shadow-lg h4 {
+    font-size: 15px;
+}
+
+.position-absolute.top-0.start-0.bg-primary.text-white.rounded-circle.d-flex.align-items-center.justify-content-center.shadow-lg {
+    width: 80px !important;
+    height: 80px !important;
+}
+
+/* Optional: Hide on mobile to keep layout clean */
+@media (min-width: 300px) and (max-width: 991px) {
+
+    .floating-element,
+    .floating-toy {
+        display: none !important;
+    }
+
+    .row.justify-content-start {
+        padding-left: 20px;
+        padding-top: 40px;
+    }
+
+    .row.justify-content-start h2.display-2.text-white.mb-4 {
+        font-size: 30px;
+    }
+
+    .col-lg-6.about-img.aos-init.aos-animate .col-6 {
+        margin: 0 !important;
+    }
+
+    .col-lg-6.about-img.aos-init.aos-animate .col-12 img,
+    .col-lg-6.about-img.aos-init.aos-animate .col-6 img {
+        padding: 7px !important;
+    }
+
+    .row.g-5.introduction.align-items-center {
+        text-align: center;
+    }
+
+    .row.g-5.introduction.align-items-center .col-lg-6 {
+        margin: 0 !important;
+    }
+
+    .introduction .d-flex.align-items-center {
+        margin: auto !important;
+        justify-content: center;
+        flex-flow: column;
+        gap: 18px;
+    }
+
+    .row.g-5.introduction.align-items-center .col-lg-6:first-child {
+        margin-bottom: 50px !important;
+    }
+}
